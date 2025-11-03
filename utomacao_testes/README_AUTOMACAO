@@ -1,0 +1,36 @@
+# Projeto Sunflower QA – Automação de Testes Mobile
+
+Este documento descreve **como configurar e executar** a automação de testes mobile do **Sunflower App**, desenvolvida em **Robot Framework + Appium**.  
+Todo o processo foi estruturado para simular um ambiente real de QA com testes funcionais, automatizados e relatórios gerados automaticamente.
+
+---
+
+## Descrição Geral
+
+A automação cobre **10 cenários BDD** do aplicativo Sunflower:
+- Listagem de plantas  
+- Detalhes de planta  
+- Adição e gerenciamento do jardim  
+- Compartilhamento de informações  
+- Galeria de imagens  
+- Navegação entre abas  
+
+Todos os testes foram criados em Robot Framework, utilizando a AppiumLibrary para interação com o aplicativo Android.
+
+---
+
+## Tecnologias Utilizadas
+
+| Componente | Função |
+|-------------|--------|
+| **Python 3.x** | Linguagem base para o Robot Framework |
+| **Robot Framework** | Framework de automação de testes |
+| **Appium** | Automação mobile (Android/iOS) |
+| **Appium Library** | Biblioteca Robot para Appium |
+| **Appium Python Client** | Comunicação com o servidor Appium |
+| **ADB / Android SDK** | Controle do emulador Android |
+| **Node.js + npm** | Base de instalação do Appium Server |
+
+---
+
+
