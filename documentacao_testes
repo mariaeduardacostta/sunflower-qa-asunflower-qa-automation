@@ -1,1 +1,100 @@
 documentacao_testes
+
+
+# Casos de Teste BDD - Sunflower App
+
+Funcionalidade: Listagem de Plantas
+  Como usuário do aplicativo Sunflower
+  Quero visualizar todas as plantas disponíveis
+  Para escolher quais desejo adicionar ao meu jardim
+
+  Cenário 01: Exibir lista de plantas com sucesso
+    Dado que o usuário acessa o aplicativo Sunflower
+    Quando ele navega até a aba "Plant List"
+    Então a lista de plantas deve ser exibida com imagens e nomes das espécies
+
+  Cenário 02: Exibir detalhes de uma planta
+    Dado que o usuário está na tela "Plant List"
+    Quando ele seleciona uma planta específica
+    Então o aplicativo deve exibir os detalhes da planta com nome, imagem e informações de rega
+
+---
+
+Funcionalidade: Adicionar Planta ao Jardim
+  Como usuário do aplicativo
+  Quero adicionar uma planta ao meu jardim
+  Para poder gerenciar o seu cultivo
+
+  Cenário 03: Adicionar planta com sucesso
+    Dado que o usuário visualiza os detalhes de uma planta
+    Quando ele clica no botão de adicionar (“+”)
+    Então a planta deve ser incluída na aba "My Garden"
+    E deve ser exibida com as informações de data de plantio e próxima rega
+
+  Cenário 04: Evitar duplicidade de planta no jardim
+    Dado que o usuário já adicionou uma planta ao seu jardim
+    Quando ele tentar adicionar novamente a mesma planta
+    Então o aplicativo deve impedir a duplicação
+    E exibir uma mensagem informando que a planta já existe no jardim
+
+---
+
+Funcionalidade: Gerenciar Jardim
+  Como usuário do aplicativo
+  Quero visualizar e organizar as plantas do meu jardim
+  Para acompanhar o status de rega e plantio
+
+  Cenário 05: Visualizar todas as plantas do jardim
+    Dado que o usuário acessa a aba "My Garden"
+    Quando o jardim possuir plantas cadastradas
+    Então o aplicativo deve exibir as imagens e nomes das plantas
+    E deve mostrar as informações de data de plantio e última rega
+
+  Cenário 06: Verificar necessidade de rega
+    Dado que o usuário está na aba "My Garden"
+    Quando a data de rega de uma planta estiver próxima
+    Então o aplicativo deve indicar visualmente a necessidade de regar a planta
+    E exibir mensagens como “water in 4 days” ou “water tomorrow”
+
+---
+
+Funcionalidade: Compartilhamento de Planta
+  Como usuário do aplicativo
+  Quero compartilhar detalhes de uma planta
+  Para divulgar informações sobre jardinagem
+
+  Cenário 07: Compartilhar planta por aplicativo externo
+    Dado que o usuário está na tela de detalhes de uma planta
+    Quando ele clica no ícone de compartilhamento
+    Então deve ser exibido o menu de aplicativos disponíveis
+    E o texto “Check out the [nome da planta] plant in the Android Sunflower app” deve estar disponível para envio
+
+---
+
+Funcionalidade: Galeria de Imagens
+  Como usuário do aplicativo
+  Quero visualizar imagens relacionadas às plantas
+  Para conhecer suas características visuais
+
+  Cenário 08: Acessar galeria de uma planta
+    Dado que o usuário está na tela de detalhes de uma planta
+    Quando ele clicar no ícone de imagem
+    Então a galeria deve ser aberta exibindo fotos da planta selecionada
+
+---
+
+Funcionalidade: Experiência do Usuário
+  Como usuário do aplicativo
+  Quero navegar entre abas com facilidade
+  Para alternar entre “My Garden” e “Plant List” rapidamente
+
+  Cenário 09: Alternar entre abas
+    Dado que o usuário está na aba “Plant List”
+    Quando ele clicar na aba “My Garden”
+    Então o aplicativo deve exibir a tela do jardim
+    E manter os dados carregados corretamente
+
+  Cenário 10: Retornar à lista de plantas
+    Dado que o usuário está na tela de detalhes de uma planta
+    Quando ele clicar no botão “voltar”
+    Então deve retornar para a tela de “Plant List”
