@@ -2,7 +2,7 @@
 
 # 🌻 Sunflower QA Automation
 
-Projeto desenvolvido e executado por **Maria Eduarda Costa (Duda)** como parte do **Desafio Técnico de Qualidade de Software (QA Pleno)**.  
+Projeto desenvolvido e executado por mim Maria Eduarda Costa como parte do **Desafio Técnico de Qualidade de Software (QA Pleno)**.  
 O objetivo é validar o aplicativo **Sunflower (Android)** por meio de **testes manuais e automatizados**, aplicando boas práticas de **BDD, automação mobile e documentação estruturada**.
 
 
