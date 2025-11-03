@@ -1,0 +1,165 @@
+*** Settings ***
+
+
+Library           AppiumLibrary
+Library           OperatingSystem
+Library           Collections
+
+Suite Setup       Abrir Aplicativo
+Suite Teardown    Fechar Aplicativo
+
+# ============================================================
+# Tecnologias utilizadas
+# ============================================================
+# - Python 3.x
+# - Robot Framework
+# - Appium Library
+# - Appium Server
+# - Appium Python Client
+# - Emulador Android (ou Device Farm)
+# ============================================================
+
+*** Variables ***
+${APPIUM_SERVER}          http://127.0.0.1:4723/wd/hub
+${PLATFORM_NAME}          Android
+${DEVICE_NAME}            emulator-5554
+${APP_PACKAGE}            com.example.sunflower
+${APP_ACTIVITY}           .MainActivity
+${TIMEOUT}                10s
+
+# ===== Locators =====
+${TAB_PLANT_LIST}         xpath=//android.widget.TextView[@text="Plant List"]
+${TAB_MY_GARDEN}          xpath=//android.widget.TextView[@text="My Garden"]
+${ITEM_PLANTA}            xpath=//android.widget.TextView[contains(@text,"Sunflower")]
+${BTN_ADICIONAR}          xpath=//android.widget.Button[@content-desc="add_plant"]
+${ICONE_COMPARTILHAR}     id=com.example.sunflower:id/share_button
+${ICONE_GALERIA}          id=com.example.sunflower:id/gallery_button
+
+*** Keywords ***
+Abrir Aplicativo
+    Log To Console    🚀 Iniciando o aplicativo Sunflower
+    Open Application    ${APPIUM_SERVER}
+    ...    platformName=${PLATFORM_NAME}
+    ...    deviceName=${DEVICE_NAME}
+    ...    appPackage=${APP_PACKAGE}
+    ...    appActivity=${APP_ACTIVITY}
+    Sleep    3s
+    Log To Console    ✅ Aplicativo aberto com sucesso
+
+Fechar Aplicativo
+    Log To Console    🧹 Encerrando sessão de testes
+    Close Application
+
+Clicar no elemento
+    [Arguments]    ${element}
+    Wait Until Element Is Visible    ${element}    ${TIMEOUT}
+    Click Element    ${element}
+
+Verificar texto
+    [Arguments]    ${text}
+    Wait Until Page Contains    ${text}    ${TIMEOUT}
+
+Capturar evidência
+    [Arguments]    ${nome}
+    Capture Page Screenshot    reports/${nome}.png
+    Log To Console    📸 Evidência salva: ${nome}.png
+
+---
+
+*** Test Cases ***
+
+# ======================================================
+#  Funcionalidade: Listagem de Plantas
+# ======================================================
+
+Exibir lista de plantas com sucesso
+    [Documentation]    Cenário 01: Exibir lista de plantas
+    Clicar no elemento    ${TAB_PLANT_LIST}
+    Verificar texto    Sunflower
+    Verificar texto    Cactus
+    Capturar evidência    lista_de_plantas
+
+Exibir detalhes de uma planta
+    [Documentation]    Cenário 02: Exibir detalhes da planta
+    Clicar no elemento    ${ITEM_PLANTA}
+    Verificar texto    Water in
+    Verificar texto    Sunflower
+    Capturar evidência    detalhes_planta
+
+# ======================================================
+#  Funcionalidade: Adicionar Planta ao Jardim
+# ======================================================
+
+Adicionar planta com sucesso
+    [Documentation]    Cenário 03: Adicionar planta com sucesso
+    Clicar no elemento    ${ITEM_PLANTA}
+    Clicar no elemento    ${BTN_ADICIONAR}
+    Clicar no elemento    ${TAB_MY_GARDEN}
+    Verificar texto    Date Planted
+    Verificar texto    Water in
+    Capturar evidência    adicionar_planta
+
+Evitar duplicidade de planta no jardim
+    [Documentation]    Cenário 04: Evitar duplicidade
+    Clicar no elemento    ${ITEM_PLANTA}
+    Clicar no elemento    ${BTN_ADICIONAR}
+    Clicar no elemento    ${BTN_ADICIONAR}
+    Verificar texto    Planta já existe no jardim
+    Capturar evidência    planta_duplicada
+
+# ======================================================
+#  Funcionalidade: Gerenciar Jardim
+# ======================================================
+
+Visualizar todas as plantas do jardim
+    [Documentation]    Cenário 05: Visualizar plantas do jardim
+    Clicar no elemento    ${TAB_MY_GARDEN}
+    Verificar texto    Water in
+    Verificar texto    Date Planted
+    Capturar evidência    jardim_plantas
+
+Verificar necessidade de rega
+    [Documentation]    Cenário 06: Verificar necessidade de rega
+    Clicar no elemento    ${TAB_MY_GARDEN}
+    Verificar texto    Water tomorrow
+    Capturar evidência    necessidade_rega
+
+# ======================================================
+# Funcionalidade: Compartilhamento de Planta
+# ======================================================
+
+Compartilhar planta por aplicativo externo
+    [Documentation]    Cenário 07: Compartilhar planta
+    Clicar no elemento    ${ITEM_PLANTA}
+    Clicar no elemento    ${ICONE_COMPARTILHAR}
+    Verificar texto    Check out the
+    Capturar evidência    compartilhar_planta
+
+# ======================================================
+# Funcionalidade: Galeria de Imagens
+# ======================================================
+
+Acessar galeria de uma planta
+    [Documentation]    Cenário 08: Acessar galeria
+    Clicar no elemento    ${ITEM_PLANTA}
+    Clicar no elemento    ${ICONE_GALERIA}
+    Verificar texto    Gallery
+    Capturar evidência    galeria_imagens
+
+# ======================================================
+# Funcionalidade: Experiência do Usuário
+# ======================================================
+
+Alternar entre abas
+    [Documentation]    Cenário 09: Alternar entre “Plant List” e “My Garden”
+    Clicar no elemento    ${TAB_PLANT_LIST}
+    Clicar no elemento    ${TAB_MY_GARDEN}
+    Verificar texto    My Garden
+    Capturar evidência    alternar_abas
+
+Retornar à lista de plantas
+    [Documentation]    Cenário 10: Retornar à “Plant List”
+    Clicar no elemento    ${ITEM_PLANTA}
+    Press Keycode    4
+    Verificar texto    Plant List
+    Capturar evidência    voltar_lista
