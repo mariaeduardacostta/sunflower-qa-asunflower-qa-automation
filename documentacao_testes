@@ -1,6 +1,6 @@
 documentacao_testes_bdd
 
-DD (Behavior Driven Development) é uma metodologia de desenvolvimento orientada ao comportamento, que descreve como o sistema deve funcionar por meio de cenários escritos em linguagem natural (Given/When/Then), facilitando o entendimento entre times técnicos e de negócio.
+BDD (Behavior Driven Development) é uma metodologia de desenvolvimento orientada ao comportamento, que descreve como o sistema deve funcionar por meio de cenários escritos em linguagem natural (Given/When/Then), facilitando o entendimento entre times técnicos e de negócio.
 
 # Casos de Teste BDD - Sunflower App
 
