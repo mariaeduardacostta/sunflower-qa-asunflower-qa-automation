@@ -2,3 +2,13 @@ Evidências - Projeto Sunflower QA
 As evidências foram disponibilizadas em uma pasta no Google Drive, pois o tamanho total dos arquivos ultrapassa o limite permitido pelo GitHub.
 
 https://drive.google.com/drive/folders/1H96pDC0eHeB85q3ua7Q7p7-XIotSfO-q?usp=drive_link
+
+| ID   | Cenário                    | Resultado | Evidência                                       |
+| ---- | -------------------------- | --------- | ----------------------------------------------- |
+| TC01 | Exibir lista de plantas    | ✅ Sucesso | `Screenshot_20251103_102413_Sunflower.jpg`      |
+| TC02 | Exibir detalhes da planta  | ✅ Sucesso | `Screenshot_20251103_102441_Sunflower.jpg`      |
+| TC03 | Adicionar planta ao jardim | ✅ Sucesso | `Screenshot_20251103_102426_Sunflower.jpg`      |
+| TC04 | Ver jardim atualizado      | ✅ Sucesso | `Screenshot_20251103_102422_Sunflower.jpg`      |
+| TC05 | Compartilhar planta        | ✅ Sucesso | `Screenshot_20251103_102450_IntentResolver.jpg` |
+| TC06 | Execução em tempo real     | 🎥 Vídeo  | `az_recorder_20251103_102505.mp4`               |
+
