@@ -1,0 +1,76 @@
+## 🚀 Passo a Passo de Configuração
+
+### 1️⃣ Instalar o Python
+Baixe em [https://www.python.org/downloads/](https://www.python.org/downloads/)  
+Durante a instalação, marque a opção **“Add Python to PATH”**.
+
+---
+
+### 2️⃣ Instalar o Node.js (para o Appium)
+Baixe em [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+
+Verifique:
+```bash
+node -v
+npm -v
+3️⃣ Instalar o Appium
+bash
+Copiar código
+npm install -g appium
+appium -v
+Para iniciar o servidor:
+
+bash
+Copiar código
+appium
+Deixe o servidor aberto (não feche o terminal).
+
+4️⃣ Instalar dependências Python
+bash
+Copiar código
+pip install robotframework
+pip install robotframework-appiumlibrary
+pip install Appium-Python-Client
+pip install robotframework-seleniumlibrary
+5️⃣ Instalar e configurar o Android Studio
+Baixe o Android Studio: https://developer.android.com/studio
+
+Crie um emulador Android (Device Manager → Create Device)
+
+Inicie o emulador
+
+Confirme a conexão:
+
+bash
+Copiar código
+adb devices
+Deve aparecer algo como:
+
+Copiar código
+emulator-5554   device
+6️⃣ Instalar o aplicativo Sunflower
+Baixe o .apk e instale no emulador:
+
+bash
+Copiar código
+adb install caminho/do/app.apk
+Se o pacote for diferente, ajuste no código:
+
+robot
+Copiar código
+${APP_PACKAGE}    com.seuapp.android
+${APP_ACTIVITY}   .MainActivity
+▶️ Executar a Automação
+1. Certifique-se de que:
+O Appium Server está rodando
+
+O emulador Android está ativo
+
+O app Sunflower está instalado
+
+2. Execute o comando:
+bash
+Copiar código
+robot -d reports automacao_testes/sunflower_automation.robot
+3. Acompanhe o resultado no console
+Durante a execução, o emulador abrirá o app e rodará os cenários automaticamente.
