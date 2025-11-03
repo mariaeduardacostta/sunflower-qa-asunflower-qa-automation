@@ -1,1 +1,55 @@
 
+Contextualização das Abordagens de Teste
+
+
+🔹 Abordagem Geral
+
+Utilização de testes manuais e automatizados para validar o aplicativo de ponta a ponta.
+
+Aplicação de boas práticas de QA, priorizando clareza, rastreabilidade e documentação padronizada.
+
+Organização de evidências, relatórios e planos de teste dentro de uma estrutura de pastas no repositório Git.
+
+🔹 Testes Manuais
+
+Execução de testes funcionais, exploratórios e de regressão.
+
+Foco em validar fluxos principais: login, cadastro, navegação e interações do usuário.
+
+Registro dos resultados e status dos testes em planilhas e relatórios.
+
+🔹 Testes Automatizados
+
+Criação de scripts de automação com foco em reutilização e manutenção.
+
+Simulação de cenários reais de uso do aplicativo.
+
+Execução dos testes em ambiente local e integração futura com Device Farm.
+
+
+🔹 Tipos de Teste Considerados
+
+Funcionais: verificação do comportamento esperado das funcionalidades.
+
+De Regressão: reexecução de cenários após correções e novas versões.
+
+De Usabilidade: avaliação da experiência e fluidez da interface.
+
+De Performance: análise de tempo de resposta e estabilidade.
+
+
+🔹 Organização do Projeto
+
+Estrutura de diretórios separando documentação e automação.
+
+Padrão de escrita e versionamento no GitHub.
+
+Relatórios e evidências armazenados em formato padronizado.
+
+🔹 Resultado Esperado
+
+Garantir a qualidade geral do aplicativo, reduzindo riscos e falhas.
+
+Proporcionar transparência e rastreabilidade em todas as etapas do processo de teste.
+
+Demonstrar maturidade técnica e metodológica em QA, aplicável em ambientes corporativos.
