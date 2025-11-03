@@ -18,8 +18,7 @@ Durante o desafio, foram realizadas as seguintes atividades:
 - Planejamento de testes e definição de escopo;  
 - Execução de testes manuais com registro de evidências (prints e vídeo);  
 - Criação de cenários de teste em BDD (Behavior Driven Development);  
-- Desenvolvimento de automação mobile com **Appium + Python + Behave**;  
-- Geração de relatórios de execução;  
+- Desenvolvimento de automação mobile. 
 - Organização do projeto com **estrutura modular e documentação técnica**.
 
 
